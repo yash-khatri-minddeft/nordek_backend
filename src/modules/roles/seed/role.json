@@ -1,0 +1,38 @@
+[
+  {
+    "id": "485fca7c-9533-4b06-bef1-308cd4dba46e",
+    "name": "Accept all permision"
+  },
+  {
+    "id": "d61c6365-4b01-4e9b-9855-4501c214a1fa",
+    "name": "Manage pair"
+  },
+  {
+    "id": "5a2c34f8-e49d-47a1-9194-3f28c04f803f",
+    "name": "Manage token"
+  },
+  {
+    "id": "a900742f-3be0-48b4-9930-099982bdaa91",
+    "name": "Manage the users account"
+  },
+  {
+    "id": "e6318814-3fa6-4fb5-a1d2-5136745f3614",
+    "name": "Manage admins"
+  },
+  {
+    "id": "e318f31a-fb66-42a7-918b-7d3cc1a6bfed",
+    "name": "Manage swap"
+  },
+  {
+    "id": "da7394a0-9e5e-44ca-a329-bc508119ddc9",
+    "name": "Manage profit"
+  },
+  {
+    "id": "8e76f19f-6b6d-4eb1-80ce-c43f4e3e185b",
+    "name": "Manage fee"
+  },
+  {
+    "id": "a900742f-3be0-48b4-9930-099982bdaa91",
+    "name": "Manage the users account"
+  }
+]
