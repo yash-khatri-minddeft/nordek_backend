@@ -16,16 +16,4 @@ export class FeeController {
   public async handleSwapFee(@Body() body: SetFee): Promise<void> {
     await this.factoryServices.setSwapFeeBP(body.value);
   }
-
-  @Roles(Role.MANAGE_FEE)
-  @Post('/remove-liquidity')
-  public async handleRemoveLiquidityFee(@Body() body: SetFee): Promise<void> {
-    await this.factoryServices.setRemoveLiquidityFeeBP(body.value);
-  }
-
-  @Roles(Role.MANAGE_FEE)
-  @Post('/add-liquidity')
-  public async handleAddLiquidityFee(@Body() body: SetFee): Promise<void> {
-    await this.factoryServices.setAddLiquidityFeeBP(body.value);
-  }
 }

@@ -34,49 +34,13 @@ export class FactoryServices {
       const valueBigInt = parseUnits(value, 2);
       const fee = await this.provider.getFeeData();
 
-      const tx = await this.contract.setSwapFeeBP(valueBigInt);
+      const tx = await this.contract.setSwapFeeBP(valueBigInt, {
+        maxFeePerGas: fee.maxFeePerGas,
+      });
 
       await tx.wait();
     } catch (error) {
       console.log(error);
-      if (error.code === ErrorCode.INSUFFICIENT_FUNDS) {
-        throw new InternalServerErrorException('Insufficient funds');
-      }
-      throw new InternalServerErrorException(error.code, error);
-    }
-  }
-
-  async setAddLiquidityFeeBP(value: string): Promise<void> {
-    try {
-      const valueBigInt = parseUnits(value, 2);
-
-      const fee = await this.provider.getFeeData();
-
-      const tx = await this.contract.setAddLiquidityFeeBP(valueBigInt, {
-        maxFeePerGas: fee.maxFeePerGas,
-      });
-
-      await tx.wait();
-    } catch (error) {
-      if (error.code === ErrorCode.INSUFFICIENT_FUNDS) {
-        throw new InternalServerErrorException('Insufficient funds');
-      }
-      throw new InternalServerErrorException(error.code, error);
-    }
-  }
-
-  async setRemoveLiquidityFeeBP(value: string): Promise<void> {
-    try {
-      const valueBigInt = parseUnits(value, 2);
-
-      const fee = await this.provider.getFeeData();
-
-      const tx = await this.contract.setRemoveLiquidityFeeBP(valueBigInt, {
-        maxFeePerGas: fee.maxFeePerGas,
-      });
-
-      await tx.wait();
-    } catch (error) {
       if (error.code === ErrorCode.INSUFFICIENT_FUNDS) {
         throw new InternalServerErrorException('Insufficient funds');
       }
